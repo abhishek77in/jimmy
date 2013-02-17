@@ -16,24 +16,9 @@ class GoogleBlog
     Google::Search::Blog.new(:query => keyword).each do |site|
       $GOOGLE_BLOG << GoogleBlog.new(site)
     end
-    log_result
-  end
-
-  def self.log_result
-    puts "Fetching complete!"
-    puts "Found #{$RESULTS.length} results"
-    puts "Listing results: "
-    $RESULTS.each { |r| r.to_s }
-  end
-
-  def to_s
-    puts "[#{title}](#{url})"
-    puts "#{excerpt}"
   end
 
   def strip_tags(html)
     Nokogiri::HTML(html).xpath("//text()").text
   end
 end
-
-GoogleBlog.fetch("rails tutorials")

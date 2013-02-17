@@ -32,22 +32,6 @@ class SpeakerDeck
     page.search(SLIDE).each do |slide|
       $SLIDES << SpeakerDeck.new(slide)
     end
-    log_result
-  end
-
-  def self.log_result
-    puts "Fetching complete!"
-    puts "Found #{$SLIDES.length} slides"
-    puts "Listing slides: "
-    $SLIDES.each { |s| s.to_s }
-  end
-
-  def to_s
-    puts "[#{title}](#{url})"
-    puts "image url - #{image}"
-    puts "#{excerpt}"
   end
 
 end
-
-SpeakerDeck.fetch("rails")

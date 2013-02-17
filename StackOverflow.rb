@@ -29,21 +29,6 @@ class StackOverflow
     page.search(QA).each do |qa|
       $QAs << StackOverflow.new(qa)
     end
-    log_result
-  end
-
-  def self.log_result
-    puts "Fetching complete!"
-    puts "Found #{$QAs.length} question answers."
-    puts "Listing questions/answers: "
-    $QAs.each { |i| i.to_s }
-  end
-
-  def to_s
-    puts "[#{title}](#{url})"
-    puts "#{excerpt}"
   end
 
 end
-
-StackOverflow.fetch("rails")
