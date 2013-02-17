@@ -4,7 +4,7 @@ require 'mechanize'
 class GoogleWeb
   attr_accessor :title, :url, :excerpt
 
-  $RESULTS = Array.new
+  $GOOGLE_WEB = Array.new
 
   def initialize(site)
     @title = site.title
@@ -14,7 +14,7 @@ class GoogleWeb
 
   def self.fetch(keyword)
     Google::Search::Web.new(:query => keyword).each do |site|
-      $RESULTS << GoogleWeb.new(site)
+      $GOOGLE_WEB << GoogleWeb.new(site)
     end
     log_result
   end

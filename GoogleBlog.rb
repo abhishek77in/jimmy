@@ -4,7 +4,7 @@ require 'mechanize'
 class GoogleBlog
   attr_accessor :title, :url, :excerpt
 
-  $RESULTS = Array.new
+  $GOOGLE_BLOG = Array.new
 
   def initialize(site)
     @title = site.title
@@ -14,7 +14,7 @@ class GoogleBlog
 
   def self.fetch(keyword)
     Google::Search::Blog.new(:query => keyword).each do |site|
-      $RESULTS << GoogleBlog.new(site)
+      $GOOGLE_BLOG << GoogleBlog.new(site)
     end
     log_result
   end
