@@ -1,0 +1,56 @@
+h1 { font-size: 40px; }
+h1, h2 { text-align: center }
+
+.twitter .item {
+  display: inline-block;
+  width: 300px;
+  height: 100px;
+  border: 1px;
+  border-color: red;
+}
+.twitter .item img {
+  display: block;
+  clear: left;
+}
+.twitter .item h3 {
+  display: inherit;
+  clear: left;
+  clear: both;
+}
+
+.speakerdeck .item {
+  display: inline-block;
+  width: 33%;
+  height: 300px;
+  border: 1px;
+  border-color: red;
+}
+.speakerdeck .item img {
+  display: block;
+  clear: left;
+}
+.speakerdeck .item h3 {
+  display: inherit;
+  clear: left;
+  clear: both;
+}
+
+.stackoverflow .item {
+  display: inline-block;
+  width: 33%;
+  height: 300px;
+  border: 1px;
+  border-color: red;
+}
+.stackoverflow .item img {
+  display: block;
+  clear: left;
+}
+.stackoverflow .item h3 {
+  display: inherit;
+  clear: left;
+  clear: both;
+}
+
+.google-web { width: 50%; float: left; }
+.google-web { width: 50%; float: right; }

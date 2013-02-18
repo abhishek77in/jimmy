@@ -2,44 +2,55 @@
 <html>
 <head>
 <title>Learning Resources for <%= keyword %></title>
+<link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
   <body>
-  <h1>Discovered Learning Resources for <%= keyword %></h1>
+  <h1>Discovered Learning Resources for <%= keyword %></h1><hr/>
     <div class="twitter">
-      <h2>Tweeters to follow</h2>
+      <h2>Tweeters to follow</h2><hr/>
       <% $TWEETERS.each do |result| %>
-        <%= heading result.url, result.title %>
-        <%= image result.url, result.image %>
+        <div class="item">
+          <%= heading result.url, result.title %>
+          <%= image result.url, result.image %>
+        </div>
       <% end %>
-    </div>
-    <div class="speaakerdeck">
-      <h2>Slides to go through</h2>
+    </div><hr/>
+    <div class="speakerdeck">
+      <h2>Slides to go through</h2><hr/>
       <% $SLIDES.each do |result| %>
-        <%= heading result.url, result.title %>
-        <%= image result.url, result.image %>
-        <%= excerpt result.excerpt %>
+        <div class="item">
+          <%= heading result.url, result.title %>
+          <%= image result.url, result.image %>
+          <%= excerpt result.excerpt %>
+        </div>
       <% end %>
-    </div>
+    </div><hr/>
     <div class="stackoverflow">
-        <h2>Top StackOverflow to Read</h2>
+      <h2>Top StackOverflow questions/answers to Read</h2><hr/>
       <% $QAs.each do |result| %>
-        <%= heading result.url, result.title %>
-        <%= excerpt result.excerpt %>
+        <div class="item">
+          <%= heading result.url, result.title %>
+          <%= excerpt result.excerpt %>
+        </div>
       <% end %>
-    </div>
+    </div><hr/>
     <div class="google-web">
-      <h2>Top hits to checkout</h2>
+      <h2>Top hits to checkout</h2><hr/>
       <% $GOOGLE_WEB.each do |result| %>
-        <%= heading result.url, result.title %>
-        <%= excerpt result.excerpt %>
+        <div class="item">
+          <%= heading result.url, result.title %>
+          <%= excerpt result.excerpt %>
+        </div>
       <% end %>
-    </div>
+    </div><hr/>
     <div class="google-blog">
-      <h2>Blogs to checkout</h2>
+      <h2>Blogs to checkout</h2><hr/>
       <% $GOOGLE_BLOG.each do |result| %>
-        <%= heading result.url, result.title %>
-        <%= excerpt result.excerpt %>
-      <% end %>
-    </div>
+        <div class="item">
+          <%= heading result.url, result.title %>
+          <%= excerpt result.excerpt %>
+        <% end %>
+    </div><hr/>
+    <h1>THANK YOU!</h1>
   </body>
 </html>
