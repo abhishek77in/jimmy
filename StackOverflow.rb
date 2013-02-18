@@ -15,12 +15,6 @@ class StackOverflow
     @title = qa.search(TITLE).text
     @url = BASE_URL + qa.search(URL).first["href"]
     @excerpt = qa.search(EXCERPT).text
-    sanatize
-  end
-
-  def sanatize
-    @title = @title.gsub("\n"," ")
-    @excerpt = @excerpt.gsub("\n"," ")
   end
 
   def self.fetch(keyword)

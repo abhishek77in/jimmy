@@ -15,15 +15,19 @@ GoogleBlog.fetch("#{keyword} tutorials")
 Twitter.fetch(keyword)
 
 def heading(url,title)
-  "<a href=\"#{url}\"><h3>#{title}</h3></a>"
+  "<a href=\"#{url}\"><h3>#{sanatize title}</h3></a>"
 end
 
 def excerpt(excerpt)
-  "<p>#{excerpt}</p>"
+  "<p>#{sanatize excerpt}</p>"
 end
 
 def image(url,src)
   "<a href=\"#{url}\"><img src=\"#{src}\" /></a>"
+end
+
+def sanatize(content)
+  content.gsub("\n"," ")
 end
 
 template = ERB.new(File.read("index.html.erb"))

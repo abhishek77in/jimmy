@@ -18,12 +18,6 @@ class SpeakerDeck
     credit = slide.search(CREDIT).text
     @excerpt = "#{@title} - by #{credit}"
     @image = slide.search(IMAGE).first["src"]
-    sanatize
-  end
-
-  def sanatize
-    @title = @title.gsub("\n","")
-    @excerpt = @excerpt.gsub("\n","")
   end
 
   def self.fetch(keyword)
