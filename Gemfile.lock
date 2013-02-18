@@ -1,6 +1,9 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    amazon-ecs (2.2.4)
+      nokogiri (~> 1.4)
+      ruby-hmac (~> 0.3)
     domain_name (0.5.7)
       unf (~> 0.0.3)
     google-search (1.0.3)
@@ -19,6 +22,7 @@ GEM
     net-http-persistent (2.8)
     nokogiri (1.5.6)
     ntlm-http (0.1.1)
+    ruby-hmac (0.4.0)
     unf (0.0.5)
       unf_ext
     unf_ext (0.0.5)
@@ -28,5 +32,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  amazon-ecs
   google-search
   mechanize
