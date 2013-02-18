@@ -1,17 +1,10 @@
 <!DOCTYPE>
 <html>
 <head>
-<title>Learning Resources found</title>
+<title>Learning Resources for <%= keyword %></title>
 </head>
   <body>
-    <h1>Learning Resources:</h1>
-    <div class="google-web">
-      <h2>Top hits for <%= keyword %></h2>
-      <% $GOOGLE_WEB.each do |result| %>
-        <%= heading result.url, result.title %>
-        <%= excerpt result.excerpt %>
-      <% end %>
-    </div>
+  <h1>Discovered Learning Resources for <%= keyword %></h1>
     <div class="speaakerdeck">
       <h2>Slides for <%= keyword %></h2>
       <% $SLIDES.each do |result| %>
@@ -21,8 +14,15 @@
       <% end %>
     </div>
     <div class="stackoverflow">
-      <h2>Top StackOverflow hits for <%= keyword %></h2>
+        <h2>Top StackOverflow hits for <%= keyword %> - Should Read</h2>
       <% $QAs.each do |result| %>
+        <%= heading result.url, result.title %>
+        <%= excerpt result.excerpt %>
+      <% end %>
+    </div>
+    <div class="google-web">
+      <h2>Top hits for <%= keyword %></h2>
+      <% $GOOGLE_WEB.each do |result| %>
         <%= heading result.url, result.title %>
         <%= excerpt result.excerpt %>
       <% end %>
