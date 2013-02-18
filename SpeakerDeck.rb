@@ -3,7 +3,7 @@ class SpeakerDeck
   attr_accessor :title, :url, :excerpt, :image
 
   REQ_URL = "https://speakerdeck.com/search?q="
-  BASE_URL = "https://speakerdeck.com/"
+  BASE_URL = "https://speakerdeck.com"
   $SLIDES = Array.new
 
   SLIDE = ".talk"
