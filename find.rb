@@ -4,6 +4,7 @@ require_relative 'StackOverflow'
 require_relative 'GoogleWeb'
 require_relative 'GoogleBlog'
 require_relative 'Resource'
+require_relative 'Twitter'
 
 keyword = ARGV[0]
 
@@ -11,6 +12,7 @@ SpeakerDeck.fetch(keyword)
 StackOverflow.fetch(keyword)
 GoogleWeb.fetch("#{keyword} tutorials")
 GoogleBlog.fetch("#{keyword} tutorials")
+Twitter.fetch(keyword)
 
 def heading(url,title)
   "<a href=\"#{url}\"><h3>#{title}</h3></a>"

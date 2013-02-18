@@ -5,8 +5,15 @@
 </head>
   <body>
   <h1>Discovered Learning Resources for <%= keyword %></h1>
+    <div class="twitter">
+      <h2>Tweeters to follow</h2>
+      <% $TWEETERS.each do |result| %>
+        <%= heading result.url, result.title %>
+        <%= image result.url, result.image %>
+      <% end %>
+    </div>
     <div class="speaakerdeck">
-      <h2>Slides for <%= keyword %></h2>
+      <h2>Slides to go through</h2>
       <% $SLIDES.each do |result| %>
         <%= heading result.url, result.title %>
         <%= image result.url, result.image %>
@@ -14,21 +21,21 @@
       <% end %>
     </div>
     <div class="stackoverflow">
-        <h2>Top StackOverflow hits for <%= keyword %> - Should Read</h2>
+        <h2>Top StackOverflow to Read</h2>
       <% $QAs.each do |result| %>
         <%= heading result.url, result.title %>
         <%= excerpt result.excerpt %>
       <% end %>
     </div>
     <div class="google-web">
-      <h2>Top hits for <%= keyword %></h2>
+      <h2>Top hits to checkout</h2>
       <% $GOOGLE_WEB.each do |result| %>
         <%= heading result.url, result.title %>
         <%= excerpt result.excerpt %>
       <% end %>
     </div>
     <div class="google-blog">
-      <h2>Blogs for <%= keyword %></h2>
+      <h2>Blogs to checkout</h2>
       <% $GOOGLE_BLOG.each do |result| %>
         <%= heading result.url, result.title %>
         <%= excerpt result.excerpt %>
