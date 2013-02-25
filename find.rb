@@ -6,7 +6,7 @@ require_relative 'GoogleBlog'
 require_relative 'Resource'
 require_relative 'Twitter'
 
-keyword = ARGV[0]
+keyword = ARGV.join(" ")
 
 SpeakerDeck.fetch(keyword)
 StackOverflow.fetch(keyword)
@@ -36,4 +36,4 @@ file = File.new("#{keyword}.html", "w")
 file.puts template.result(binding)
 file.close
 
-`open #{keyword}.html`
+`open "#{keyword}.html"`
