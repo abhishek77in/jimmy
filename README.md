@@ -10,5 +10,5 @@ $ruby github/repo.rb user_name repo_name
 **Example**
 ```
 $ruby find.rb ruby on rails
-$ruby github/repo.rb abhishek77in vimfiles
+$ruby github/repo.rb abhishek77in HackerNotes
 ```
