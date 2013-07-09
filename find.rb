@@ -8,10 +8,15 @@ require_relative 'Twitter'
 
 keyword = ARGV.join(" ")
 
+puts "Checking SpeakerDeck"
 SpeakerDeck.fetch(keyword)
+puts "Checking StackOverflow"
 StackOverflow.fetch(keyword)
+puts "Googling the Web for Websites"
 GoogleWeb.fetch("#{keyword} tutorials")
+puts "Googling the Web for Blogs"
 GoogleBlog.fetch("#{keyword} tutorials")
+puts "Checking Twitter"
 Twitter.fetch(keyword)
 
 def heading(url,title)
@@ -37,3 +42,4 @@ file.puts template.result(binding)
 file.close
 
 `open "#{keyword}.html"`
+puts "\nOpen #{keyword}.html file if it does not open automatically"
